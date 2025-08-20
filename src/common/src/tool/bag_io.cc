@@ -1,6 +1,6 @@
 /**
  * @file bag_io.cc
- * @author zhouchao (zhouchao@jushenzhiren.com)
+ * @author no-reply@example.invalid
  * @brief 
  * @version 0.1
  * @date 2024-11-13

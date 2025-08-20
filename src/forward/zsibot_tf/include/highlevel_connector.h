@@ -1,7 +1,7 @@
 /*
- * @Author: zhangjian zhangjian@jushenzhiren.com
+ * @Author: no-reply@example.invalid
  * @Date: 2024-12-19 17:24:55
- * @LastEditors: zhangjian zhangjian@jushenzhiren.com
+ * @LastEditors: no-reply@example.invalid
  * @LastEditTime: 2024-12-26 19:46:56
  * @FilePath: /zsibot_sdk/include/rt_udp.h
  */

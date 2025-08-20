@@ -1,8 +1,7 @@
 /*
- * @Author: zhangjian zhangjian@jushenzhiren.com
+ * @Author: no-reply@example.invalid
  * @Date: 2024-12-19 16:49:08
- * @LastEditors: zhangjian zhangjian@jushenzhiren.com
- * @LastEditTime: 2024-12-28 16:27:33
+ * @LastEditors: no-reply@example.invalid
  * @FilePath: /zsibot_sdk/include/udp.h
  */
 #pragma once

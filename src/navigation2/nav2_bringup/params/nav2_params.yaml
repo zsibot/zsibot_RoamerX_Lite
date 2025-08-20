@@ -123,7 +123,7 @@ controller_server:
 
     # Progress checker parameters
     progress_checker:
-      plugin: "navigo_path_controller::SimpleProgressChecker"
+      plugin: "nav2_path_controller::SimpleProgressChecker"
       required_movement_radius: 0.5
       movement_time_allowance: 10.0
     # Goal checker parameters

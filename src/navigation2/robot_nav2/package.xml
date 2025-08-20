@@ -4,7 +4,7 @@
   <name>robot_nav2</name>
   <version>0.3.6</version>
   <description>TODO: Package description</description>
-  <maintainer email="lingyihu@navigo.com">lingyihu</maintainer>
+  <maintainer email="lingyihu@nav2.com">lingyihu</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -23,10 +23,10 @@
   <exec_depend>nav_msgs</exec_depend>
   <exec_depend>OpenCV</exec_depend>
   <exec_depend>yaml-cpp</exec_depend>
-  <exec_depend>navigo_behavior_tree</exec_depend>
-  <exec_depend>navigo_bt_navigator</exec_depend>
-  <exec_depend>navigo_core</exec_depend>
-  <exec_depend>navigo_costmap_2d</exec_depend>
+  <exec_depend>nav2_behavior_tree</exec_depend>
+  <exec_depend>nav2_bt_navigator</exec_depend>
+  <exec_depend>nav2_core</exec_depend>
+  <exec_depend>nav2_costmap_2d</exec_depend>
   <exec_depend>robots_dog_msgs</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>tf2_geometry_msgs</exec_depend>

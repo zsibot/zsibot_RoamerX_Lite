@@ -9,49 +9,49 @@ bt_navigator:
     default_server_timeout: 1000
     enable_groot_monitoring: True
     plugin_lib_names:
-      - navigo_back_up_action_bt_node
-      - navigo_back_up_cancel_bt_node
-      - navigo_clear_costmap_service_bt_node
-      - navigo_compute_collision_distance_action_bt_node
-      - navigo_compute_control_error_action_bt_node
-      - navigo_compute_goal_distance_action_bt_node
-      - navigo_compute_path_through_poses_action_bt_node
-      - navigo_compute_path_to_pose_action_bt_node
-      - navigo_compute_spin_distance_action_bt_node
-      - navigo_compute_uwb_goal_action_bt_node
-      - navigo_evaluate_goal_action_bt_node
-      - navigo_follow_path_action_bt_node
-      - navigo_follow_path_cancel_bt_node
-      - navigo_general_conditions_bt_node
-      - navigo_globally_updated_goal_condition_bt_node
-      - navigo_goal_reached_condition_bt_node
-      - navigo_goal_updated_condition_bt_node
-      - navigo_is_exploration_completed_condition_bt_node
-      - navigo_is_exploration_goal_valid_condition_bt_node
-      - navigo_is_path_valid_condition_bt_node
-      - navigo_is_target_in_fov_condition_bt_node
-      - navigo_optimize_path_service_bt_node
-      - navigo_parse_trajectory_action_bt_node
-      - navigo_pipeline_sequence_bt_node
-      - navigo_progress_check_bt_node
-      - navigo_publish_debug_msgs_action_bt_node
-      - navigo_rate_controller_bt_node
-      - navigo_recovery_node_bt_node
-      - navigo_remove_passed_goals_action_bt_node
-      - navigo_round_robin_node_bt_node
-      - navigo_select_exploration_goal_action_bt_node
-      - navigo_select_frontend_id_action_bt_node
-      - navigo_select_frontend_ids_action_bt_node
-      - navigo_select_patrol_goal_action_bt_node
-      - navigo_select_patrol_mode_action_bt_node
-      - navigo_separate_paths_action_bt_node
-      - navigo_spin_action_bt_node
-      - navigo_spin_cancel_bt_node
-      - navigo_stitch_path_action_bt_node
-      - navigo_truncate_path_to_goal_action_bt_node
-      - navigo_truncate_paths_action_bt_node
-      - navigo_update_path_action_bt_node
-      - navigo_wait_action_bt_node
+      - nav2_back_up_action_bt_node
+      - nav2_back_up_cancel_bt_node
+      - nav2_clear_costmap_service_bt_node
+      - nav2_compute_collision_distance_action_bt_node
+      - nav2_compute_control_error_action_bt_node
+      - nav2_compute_goal_distance_action_bt_node
+      - nav2_compute_path_through_poses_action_bt_node
+      - nav2_compute_path_to_pose_action_bt_node
+      - nav2_compute_spin_distance_action_bt_node
+      - nav2_compute_uwb_goal_action_bt_node
+      - nav2_evaluate_goal_action_bt_node
+      - nav2_follow_path_action_bt_node
+      - nav2_follow_path_cancel_bt_node
+      - nav2_general_conditions_bt_node
+      - nav2_globally_updated_goal_condition_bt_node
+      - nav2_goal_reached_condition_bt_node
+      - nav2_goal_updated_condition_bt_node
+      - nav2_is_exploration_completed_condition_bt_node
+      - nav2_is_exploration_goal_valid_condition_bt_node
+      - nav2_is_path_valid_condition_bt_node
+      - nav2_is_target_in_fov_condition_bt_node
+      - nav2_optimize_path_service_bt_node
+      - nav2_parse_trajectory_action_bt_node
+      - nav2_pipeline_sequence_bt_node
+      - nav2_progress_check_bt_node
+      - nav2_publish_debug_msgs_action_bt_node
+      - nav2_rate_controller_bt_node
+      - nav2_recovery_node_bt_node
+      - nav2_remove_passed_goals_action_bt_node
+      - nav2_round_robin_node_bt_node
+      - nav2_select_exploration_goal_action_bt_node
+      - nav2_select_frontend_id_action_bt_node
+      - nav2_select_frontend_ids_action_bt_node
+      - nav2_select_patrol_goal_action_bt_node
+      - nav2_select_patrol_mode_action_bt_node
+      - nav2_separate_paths_action_bt_node
+      - nav2_spin_action_bt_node
+      - nav2_spin_cancel_bt_node
+      - nav2_stitch_path_action_bt_node
+      - nav2_truncate_path_to_goal_action_bt_node
+      - nav2_truncate_paths_action_bt_node
+      - nav2_update_path_action_bt_node
+      - nav2_wait_action_bt_node
 
 bt_navigator_rclcpp_node:
   ros__parameters:
@@ -91,13 +91,13 @@ behavior_server:
     cycle_frequency: 10.0
     behavior_plugins: [ "spin", "backup", "drive_on_heading", "wait" ]
     spin:
-      plugin: "navigo_behaviors/Spin"
+      plugin: "nav2_behaviors/Spin"
     backup:
-      plugin: "navigo_behaviors/BackUp"
+      plugin: "nav2_behaviors/BackUp"
     drive_on_heading:
-      plugin: "navigo_behaviors/DriveOnHeading"
+      plugin: "nav2_behaviors/DriveOnHeading"
     wait:
-      plugin: "navigo_behaviors/Wait"
+      plugin: "nav2_behaviors/Wait"
     global_frame: odom
     robot_base_frame: base_link
     transform_tolerance: 0.1
@@ -123,11 +123,11 @@ local_costmap:
       footprint: "[[0.35,0.20],[0.35,-0.20],[-0.35,-0.20],[-0.35,0.20]]"
       plugins: [ "obstacle_layer", "inflation_layer" ]
       inflation_layer:
-        plugin: "navigo_costmap_2d::InflationLayer"
+        plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
         inflation_radius: 0.05
       obstacle_layer:
-        plugin: "navigo_costmap_2d::ObstacleLayer"
+        plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
         goal_safe_area: "[[0.40,0.4],[0.4,-0.4],[-0.4,-0.4],[-0.4,0.4]]"
         goal_pose_clearing_enbaled: true
@@ -169,14 +169,14 @@ local_costmap_controller:
       resolution: 0.05
       plugins: [ "obstacle_layer", "inflation_layer" ]
       static_layer:
-        plugin: "navigo_costmap_2d::StaticLayer"
+        plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
       inflation_layer:
-        plugin: "navigo_costmap_2d::InflationLayer"
+        plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
         inflation_radius: 0.3
       obstacle_layer:
-        plugin: "navigo_costmap_2d::ObstacleLayer"
+        plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
         # goal_pose_clearing_enbaled: true
         # footprint_clearing_enabled: true
@@ -209,18 +209,18 @@ global_costmap:
       track_unknown_space: true
       plugins: [ "static_layer", "electronic_map_layer", "inflation_layer", "frontier_layer", "esdf_layer" ]
       static_layer:
-        plugin: "navigo_costmap_2d::StaticLayer"
+        plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
         footprint_clearing_enabled: True
         restore_cleared_footprint: True
       electronic_map_layer:
-        plugin: "navigo_costmap_2d::ElectronicMapLayer"
+        plugin: "nav2_costmap_2d::ElectronicMapLayer"
       inflation_layer:
-        plugin: "navigo_costmap_2d::InflationLayer"
+        plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
         inflation_radius: 0.1
       frontier_layer:
-        plugin: "navigo_costmap_2d::FrontierLayer"
+        plugin: "nav2_costmap_2d::FrontierLayer"
         inner_map_topic: "/exploration_map"
         map_subscribe_transient_local: True
         obstacle_inflation_radius: 0.3
@@ -228,7 +228,7 @@ global_costmap:
         travel_point_type: "closest" #closest middle centroid
         frontier_min_size: 10
       esdf_layer:
-        plugin: "navigo_costmap_2d::ESDFLayer"
+        plugin: "nav2_costmap_2d::ESDFLayer"
         enabled: false
         esdf_pos_dis_topic_name: esdf_pos_distance_field
         esdf_neg_dis_topic_name: esdf_neg_distance_field
@@ -282,7 +282,7 @@ planner_server:
     three_circle_fine_check_sample_res: 0.05
     planner_plugins: [ "GridBasedST", "GridBasedSL" ]
     GridBasedST:
-      plugin: "navigo_spatial_temporal_planner/SpatialTemporalPlanner"
+      plugin: "nav2_spatial_temporal_planner/SpatialTemporalPlanner"
       open_expansion_visualization: false
       allow_reverse_expansion: false
       consider_lateral_move: true
@@ -411,7 +411,7 @@ planner_server:
       extension_dis: 0.5
       extension_step_size: 0.05
     GridBasedSL:
-      plugin: "navigo_straight_line_planner/StraightLinePlanner"
+      plugin: "nav2_straight_line_planner/StraightLinePlanner"
       allow_reversing: true
       traj_res: 0.05
       # extension line
@@ -440,19 +440,19 @@ controller_server:
 
     # Progress checker parameters
     progress_checker:
-      plugin: "navigo_path_controller::SimpleProgressChecker"
+      plugin: "nav2_path_controller::SimpleProgressChecker"
       required_movement_radius: 0.5
       movement_time_allowance: 10.0
     # Goal checker parameters
     general_goal_checker:
       stateful: True
-      plugin: "navigo_path_controller::SimpleGoalChecker"
+      plugin: "nav2_path_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.25   #到达目标位置的容忍度
       yaw_goal_tolerance: 0.25  #到达目标方向的容忍度
 
     # MPPI parameters
     FollowPathMPPI:
-      plugin: "navigo_mppi_controller::MPPIController"
+      plugin: "nav2_mppi_controller::MPPIController"
       time_steps: 56
       model_dt: 0.05
       batch_size: 2000
@@ -536,7 +536,7 @@ controller_server:
 
     # PP parameters
     FollowPathPP:
-      plugin: "navigo_pure_pursuit_controller::PurePursuitController"
+      plugin: "nav2_pure_pursuit_controller::PurePursuitController"
       ### UWB PARAMETER ###
       use_multiple_vel_mode: true
       multiple_vel_mode_threshold_dist: 3.0
@@ -616,7 +616,7 @@ waypoint_follower:
     build_esdf_map: true
     waypoint_task_executor_plugin: "wait_at_waypoint"
     wait_at_waypoint:
-      plugin: "navigo_waypoint_follower::WaitAtWaypoint"
+      plugin: "nav2_waypoint_follower::WaitAtWaypoint"
       enabled: True
       waypoint_pause_duration: 200
 

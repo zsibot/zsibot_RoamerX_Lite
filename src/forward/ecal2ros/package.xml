@@ -4,7 +4,7 @@
   <name>ecal2ros</name>
   <version>0.2.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="pengcheng@jushenzhiren.com">firefly</maintainer>
+  <maintainer email="no-reply@example.invalid">firefly</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

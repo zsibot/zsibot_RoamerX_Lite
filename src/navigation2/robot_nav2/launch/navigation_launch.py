@@ -114,7 +114,7 @@ def generate_launch_description():
         actions=[
             SetParameter('use_sim_time', use_sim_time),
             Node(
-                package='navigo_map_server',
+                package='nav2_map_server',
                 executable='map_server',
                 name='map_server',
                 output='screen',
@@ -125,7 +125,7 @@ def generate_launch_description():
                 remappings=remappings,
             ),
             Node(
-                package='navigo_path_controller',
+                package='nav2_path_controller',
                 executable='controller_server',
                 output='screen',
                 respawn=use_respawn,
@@ -135,7 +135,7 @@ def generate_launch_description():
                 remappings=remappings
             ),
             Node(
-                package='navigo_path_planner',
+                package='nav2_path_planner',
                 executable='planner_server',
                 name='planner_server',
                 output='screen',
@@ -149,11 +149,11 @@ def generate_launch_description():
                 #     '--leak-check=full ',
                 #     '--show-leak-kinds=all ',
                 #     '--track-origins=yes ',
-                #     '--log-file=/home/zy/navigo_path_planner.log ',
+                #     '--log-file=/home/zy/nav2_path_planner.log ',
                 # ],
             ),
             Node(
-                package='navigo_behaviors',
+                package='nav2_behaviors',
                 executable='behavior_server',
                 name='behavior_server',
                 output='screen',
@@ -164,7 +164,7 @@ def generate_launch_description():
                 remappings=remappings
             ),
             Node(
-                package='navigo_velocity_optimizer',
+                package='nav2_velocity_optimizer',
                 executable='velocity_optimizer',
                 name='velocity_optimizer',
                 output='screen',
@@ -175,7 +175,7 @@ def generate_launch_description():
                 remappings=remappings
             ),
             Node(
-                package='navigo_collision_monitor',
+                package='nav2_collision_monitor',
                 executable='collision_monitor',
                 name='collision_monitor',
                 output='screen',
@@ -186,7 +186,7 @@ def generate_launch_description():
                 remappings=remappings
             ),
             Node(
-                package='navigo_bt_navigator',
+                package='nav2_bt_navigator',
                 executable='bt_navigator',
                 name='bt_navigator',
                 output='screen',
@@ -200,11 +200,11 @@ def generate_launch_description():
                 #     '--leak-check=full ',
                 #     '--show-leak-kinds=all ',
                 #     '--track-origins=yes ',
-                #     '--log-file=/home/zy/navigo_bt_navigator.log ',
+                #     '--log-file=/home/zy/nav2_bt_navigator.log ',
                 # ],
             ),
             Node(
-                package='navigo_waypoint_follower',
+                package='nav2_waypoint_follower',
                 executable='waypoint_follower',
                 name='waypoint_follower',
                 output='screen',
@@ -218,7 +218,7 @@ def generate_launch_description():
                 #     '--leak-check=full ',
                 #     '--show-leak-kinds=all ',
                 #     '--track-origins=yes ',
-                #     '--log-file=/home/zy/navigo_waypoint_follower.log ',
+                #     '--log-file=/home/zy/nav2_waypoint_follower.log ',
                 # ],
             ),
             Node(
@@ -244,57 +244,57 @@ def generate_launch_description():
                 target_container=container_name_full,
                 composable_node_descriptions=[
                     ComposableNode(
-                        package='navigo_map_server',
-                        plugin='navigo_map_server::MapServer',
+                        package='nav2_map_server',
+                        plugin='nav2_map_server::MapServer',
                         name='map_server',
                         parameters=[configured_params],
                         remappings=remappings,
                     ),
                     ComposableNode(
-                        package='navigo_path_controller',
-                        plugin='navigo_path_controller::ControllerServer',
+                        package='nav2_path_controller',
+                        plugin='nav2_path_controller::ControllerServer',
                         name='controller_server',
                         parameters=[configured_params],
                         remappings=remappings + [('cmd_vel', 'cmd_vel_nav')]
                     ),
                     ComposableNode(
-                        package='navigo_path_planner',
-                        plugin='navigo_path_planner::PlannerServer',
+                        package='nav2_path_planner',
+                        plugin='nav2_path_planner::PlannerServer',
                         name='planner_server',
                         parameters=[configured_params],
                         remappings=remappings,
                     ),
                     ComposableNode(
-                        package='navigo_behaviors',
+                        package='nav2_behaviors',
                         plugin='behavior_server::BehaviorServer',
                         name='behavior_server',
                         parameters=[configured_params],
                         remappings=remappings + [('cmd_vel', 'cmd_vel_nav')]
                     ),
                     ComposableNode(
-                        package='navigo_velocity_optimizer',
-                        plugin='navigo_velocity_optimizer::VelocityOptimizer',
+                        package='nav2_velocity_optimizer',
+                        plugin='nav2_velocity_optimizer::VelocityOptimizer',
                         name='velocity_optimizer',
                         parameters=[configured_params],
                         remappings=remappings + [('cmd_vel', 'cmd_vel_nav')]
                     ),
                     ComposableNode(
-                        package='navigo_collision_monitor',
-                        plugin='navigo_collision_monitor::CollisionMonitor',
+                        package='nav2_collision_monitor',
+                        plugin='nav2_collision_monitor::CollisionMonitor',
                         name='collision_monitor',
                         parameters=[configured_params],
                         remappings=remappings + [('cmd_vel_raw', 'cmd_vel_smoothed')]
                     ),
                     ComposableNode(
-                        package='navigo_bt_navigator',
-                        plugin='navigo_bt_navigator::BtNavigator',
+                        package='nav2_bt_navigator',
+                        plugin='nav2_bt_navigator::BtNavigator',
                         name='bt_navigator',
                         parameters=[configured_params],
                         remappings=remappings,
                     ),
                     ComposableNode(
-                        package='navigo_waypoint_follower',
-                        plugin='navigo_waypoint_follower::WaypointFollower',
+                        package='nav2_waypoint_follower',
+                        plugin='nav2_waypoint_follower::WaypointFollower',
                         name='waypoint_follower',
                         parameters=[configured_params],
                         remappings=remappings,

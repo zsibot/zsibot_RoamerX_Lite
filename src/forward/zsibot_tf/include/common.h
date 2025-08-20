@@ -1,7 +1,7 @@
 /*
- * @Author: zhangjian zhangjian@jushenzhiren.com
+ * @Author: no-reply@example.invalid
  * @Date: 2024-12-19 16:53:30
- * @LastEditors: zhangjian zhangjian@jushenzhiren.com
+ * @LastEditors: no-reply@example.invalid
  * @LastEditTime: 2024-12-26 19:47:17
  * @FilePath: /zsibot_sdk/include/common.h
  */

@@ -4,7 +4,7 @@
         <name>pub_tf</name>
         <version>0.0.0</version>
         <description>The localization package</description>
-        <maintainer email="liliuzhao@jushenzhiren.com">LiuZhao Li</maintainer>
+        <maintainer email="no-reply@example.invalid">LiuZhao Li</maintainer>
         <license>MPL</license>
 
         <buildtool_depend>ament_cmake</buildtool_depend>

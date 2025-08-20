@@ -4,7 +4,7 @@
   <name>common</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="zhouchao@jushenzhiren.com">zhouchao</maintainer>
+  <maintainer email="no-reply@example.invalid">sansui</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

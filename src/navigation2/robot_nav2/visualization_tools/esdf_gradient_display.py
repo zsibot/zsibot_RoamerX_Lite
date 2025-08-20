@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load CSV
-df = pd.read_csv("/home/lyh/YihuWS/NAVIGO/code/navigo_workspace/gradient.csv")
+df = pd.read_csv("/home/")
 
 # Extract coordinates and gradient
 x = df['x'].values
